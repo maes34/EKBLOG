@@ -1,0 +1,126 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="8.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\dist\css\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\dist\css\lineaicon\fonts\.DS_Store" />
+    <None Include="wwwroot\EkPortfolio\.git\COMMIT_EDITMSG" />
+    <None Include="wwwroot\EkPortfolio\.git\config" />
+    <None Include="wwwroot\EkPortfolio\.git\description" />
+    <None Include="wwwroot\EkPortfolio\.git\FETCH_HEAD" />
+    <None Include="wwwroot\EkPortfolio\.git\HEAD" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\sendemail-validate.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\hooks\update.sample" />
+    <None Include="wwwroot\EkPortfolio\.git\index" />
+    <None Include="wwwroot\EkPortfolio\.git\info\exclude" />
+    <None Include="wwwroot\EkPortfolio\.git\logs\HEAD" />
+    <None Include="wwwroot\EkPortfolio\.git\logs\refs\heads\main" />
+    <None Include="wwwroot\EkPortfolio\.git\logs\refs\remotes\origin\main" />
+    <None Include="wwwroot\EkPortfolio\.git\objects\46\bcc6e79cc2a8bb15ce463f23cdb1d0a31ccd4e" />
+    <None Include="wwwroot\EkPortfolio\.git\objects\a2\5e5b795df05af5b891b8c3a2b8e2c00db75ca6" />
+    <None Include="wwwroot\EkPortfolio\.git\objects\d4\134422ee756560b064191f5cdde86d9d5b52bc" />
+    <None Include="wwwroot\EkPortfolio\.git\objects\dc\42337a7e0c70b4dddb35b8e6628c5d00179d5e" />
+    <None Include="wwwroot\EkPortfolio\.git\objects\fc\2b4dc10f5534728e8bd612728c98b47b70aa22" />
+    <None Include="wwwroot\EkPortfolio\.git\refs\heads\main" />
+    <None Include="wwwroot\EkPortfolio\.git\refs\remotes\origin\main" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\COMMIT_EDITMSG" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\config" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\description" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\FETCH_HEAD" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\HEAD" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\sendemail-validate.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\hooks\update.sample" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\index" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\info\exclude" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\logs\HEAD" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\logs\refs\heads\main" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\logs\refs\remotes\origin\main" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\0b\4bb56d7fc993907516d9c65f261ee3a7328fd3" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\14\e701452838bc3d673e5eb0de0e76d9046495f2" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\1b\4c25533aabc84eb05c24b08030053d73cadbf5" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\29\9687f8a60aadc2bbda21446165c0ce18764265" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\2a\6b6c1c2ef8aeeb202b2d2ee776505adc818470" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\2c\9b5da514b39785ab69ac9c2b9f5cc4f1649f0e" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\30\492d68f21965691151a91824c23754b34617be" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\45\16bb6c0b713020db819500c2b67dbe3530d07c" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\4c\b28e92209ac143471988cbe688f0ac63804c6c" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\53\5d3f919575c29f0b938d42dd760057084aca06" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\60\a4792c276ee50db4cb1ba2afe30304e40d231a" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\66\24e38f056047cbd2e5e03e4bdd0d7daf21486b" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\70\21edcd01d0c99a7e76c5fc327efc090b7cb726" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\78\b9e6c10002073667b102c4e9ee0b9252462958" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\85\1c9a8dddbca1028f9bbcbf5b902f81ffb979ba" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\95\e0f2b0fcb8d25cd87f7c9ac3ab1f4490bb5756" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\9f\eac33cab60ad7e9abe03386fa8dd3d352ea2a2" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\a8\160620e4cde89355b6a994fd19cfafe92e73b5" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\af\578f435a4d2d38fd9bac4bf78071e878bfca72" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\af\faccc297d752ca8b20c1315ff1d7ced3decffe" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\b7\d7773fafe7028d4d3ad4d2698f2e98a2a8979f" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\be\0a6a3fd5964df8d22e76d832f4f4ddc0668f53" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\cc\af7db9535470d34b6894e2d46c1a206cb94558" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\d4\dd970cb5886d49d38e5bf055d371b087342839" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\d4\f62fd225d97743cc57b7d88d523739773ce9c8" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\dd\b8d1e7975f52d39113d21f97d2279cf80439d2" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\ec\1e72d620225d05c51802b5c1dd3c2f807816af" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\fa\44fadfdf719064a1c6aa07acf7135f4b570d3c" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\objects\fc\00e40abaf6258c6e82b0d9488b367171a75051" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\ORIG_HEAD" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\refs\heads\main" />
+    <None Include="wwwroot\EkPortfolio\v1\.git\refs\remotes\origin\main" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\EkPortfolio\.git\objects\info\" />
+    <Folder Include="wwwroot\EkPortfolio\.git\objects\pack\" />
+    <Folder Include="wwwroot\EkPortfolio\.git\refs\tags\" />
+    <Folder Include="wwwroot\EkPortfolio\v1\.git\objects\info\" />
+    <Folder Include="wwwroot\EkPortfolio\v1\.git\objects\pack\" />
+    <Folder Include="wwwroot\EkPortfolio\v1\.git\refs\tags\" />
+  </ItemGroup>
+
+</Project>

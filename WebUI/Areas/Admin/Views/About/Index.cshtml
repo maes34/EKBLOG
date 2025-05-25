@@ -1,0 +1,38 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="content-header sty-one">
+    <h1>Hakkımda</h1>
+    <ol class="breadcrumb">        
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> Hakkımda &nbsp;</li> |&nbsp;
+        <li>Son Güncelleme : @Model.CreatedAt </li>
+    </ol>
+</div>
+<div class="content">
+    <div class="card card-outline">
+        <div class="card-body">
+            <form method="post" action="/Admin/About/Update">
+                <input type="hidden" value="1" name="ID" />
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" placeholder="@Model.Title" name="Title" value="@Model.Title">
+                </div>
+                <div class="form-group">
+                    <br /><img class="img-fluid h-25 w-25" src="@Model.PhotoUrl" /> <br /><br />
+                    <label>Görsel</label>
+                    <input type="text" class="form-control" placeholder="@Model.PhotoUrl" name="PhotoUrl" value="@Model.PhotoUrl">
+                </div>
+                <div class="form-group">
+                    <label>İçerik</label>
+                    <textarea type="text" style="height: 100px" class="form-control" placeholder="@Model.Description" name="Description" >@Model.Description</textarea>
+                </div>
+                <input type="hidden" name="CreatedAt" value="@DateTime.Now" />
+                <button type="submit" class="btn btn-success">Güncelle</button>
+            </form>
+        </div>
+    </div>
+

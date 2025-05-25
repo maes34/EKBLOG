@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Şu Anda Bakımdayız</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="~/dist/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/dist/img/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/dist/css/style.css">
+    <link rel="stylesheet" href="~/dist/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/dist/css/et-line-font/et-line-font.css">
+    <link rel="stylesheet" href="~/dist/css/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="~/dist/css/simple-lineicon/simple-line-icons.css">
+    <link rel="stylesheet" href="~/v1/dist/css/skins/_all-skins.min.css">
+</head>
+<body class="lockscreen">
+    <div>
+        <div class="error-page text-center">
+            <h2 class="headline text-yellow"> BAKIMDA</h2>
+            <div>
+                <h3><i class="fa fa-warning text-yellow"></i> Site şu anda bakımdadır.</h3>
+                <p>
+                    @RenderBody()               
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="~/dist/js/jquery.min.js"></script>
+    <script src="~/dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/dist/js/bizadmin.js"></script>
+    <script src="~/v1/dist/js/demo.js"></script>
+</body>
+</html>

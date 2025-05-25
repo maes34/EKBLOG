@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="content-header sty-one">
+    <h1>İletişim</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> İletişim</li>
+    </ol>
+</div>
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap">
+                   <div class="row">
+                        <div class="col-sm-12">
+                            <table id="example2" class="table table-bordered table-hover dataTable" data-name="cool-table" role="grid" aria-describedby="example2_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">Adı Soyadı</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">E-Posta</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Konu</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Mesaj</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Durum</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">@item.ID</td>
+                                            <td>@item.Name @item.Surname</td>
+                                        x           <td>@item.Email</td>
+                                            <td>@item.Subject</td>
+                                            <td>@item.Messages</td>
+                                            <td>
+                                                @if (@item.Read)
+                                                {
+                                                    <span class="badge bg-success text-white p-2">Okundu</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-warning text-white p-2">Okunmadı</span>
+                                                }
+                                                
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/Contact/Delete/@item.ID"><i class="fa-solid fa-trash"></i></a> &nbsp;
+                                                <a href="/Admin/Contact/Details/@item.ID"><i class="fa-solid fa-eye"></i></a>
+
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">ID</th>
+                                        <th rowspan="1" colspan="1">Adı Soyadı</th>
+                                        <th rowspan="1" colspan="1">E-Posta</th>
+                                        <th rowspan="1" colspan="1">Konu</th>
+                                        <th rowspan="1" colspan="1">Mesaj</th>
+                                        <th rowspan="1" colspan="1">Durum</th>
+                                        <th rowspan="1" colspan="1">İşlemler</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

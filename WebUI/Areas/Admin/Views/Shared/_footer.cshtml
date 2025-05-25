@@ -1,0 +1,73 @@
+﻿@using Core.Service
+@using Model.Entities
+
+@inject ICoreService<SiteSetting> _sdb
+
+
+@{
+    var siteSettings = _sdb.GetAll().FirstOrDefault();
+    string logoUrl = siteSettings?.SiteLogoUrl ?? "/images/default-logo.png";
+    string SiteTitle = siteSettings.SiteTitle;
+    string FooterText = siteSettings.FooterCopy;
+
+}
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">Version 1.0</div>
+    Copyright © @DateTime.Now.Year @SiteTitle. Tüm Hakları Saklıdır.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane" id="control-sidebar-home-tab"></div>
+        <!-- /.tab-pane -->
+    </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+     immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+<!-- ./wrapper -->
+<!-- jQuery 3 -->
+<script src="~/dist/js/jquery.min.js"></script>
+<script src="~/dist/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- template -->
+<script src="~/dist/js/bizadmin.js"></script>
+
+<!-- Jquery Sparklines -->
+<script src="~/dist/plugins/jquery-sparklines/jquery.sparkline.min.js"></script>
+<script src="~/dist/plugins/jquery-sparklines/sparkline-int.js"></script>
+
+<!-- Morris JavaScript -->
+<script src="~/dist/plugins/raphael/raphael-min.js"></script>
+<script src="~/dist/plugins/morris/morris.js"></script>
+<script src="~/dist/plugins/functions/dashboard1.js"></script>
+
+<!-- for demo purposes -->
+<script src="~/dist/js/demo.js"></script>
+<!-- DataTable -->
+<script src="~/dist/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/dist/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+    $(function () {
+      $('#example1').DataTable()
+      $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : false,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+      })
+    })
+</script>
+
+<script src="~/dist/plugins/table-expo/filesaver.min.js"></script>
+<script src="~/dist/plugins/table-expo/xls.core.min.js"></script>
+<script src="~/dist/plugins/table-expo/tableexport.js"></script>
+<script>
+    $("table").tableExport({formats: ["xlsx","xls", "csv", "txt"],    });
+</script>

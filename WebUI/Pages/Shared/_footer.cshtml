@@ -1,0 +1,15 @@
+﻿@using Core.Service
+@using Model.Entities
+@inject ICoreService<SiteSetting> _sdb
+
+@{
+    var siteSettings = _sdb.GetAll().FirstOrDefault();
+    var logoUrl = siteSettings?.SiteLogoUrl ?? "/images/default-logo.png";
+    var footerText = siteSettings?.FooterCopy;
+}
+<div class="sticky-footer">
+    <p>
+        &copy; @DateTime.Now.Year
+        @footerText | <a href="/About">Hakkımda</a> | <a href="/Contact">İletişim</a><div class="clearFix"></div><img class="img-fluid" style="width:150px" src="@logoUrl" />
+    </p>
+</div>

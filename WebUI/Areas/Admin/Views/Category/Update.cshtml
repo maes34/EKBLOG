@@ -1,0 +1,43 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="content-header sty-one">
+    <h1>"<b>@Model.Name</b>" Kategori Güncelle</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> Yeni Kategori Ekle &nbsp;</li>
+    </ol>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-outline">
+
+                <div class="card-header bg-blue">
+                    <a href="/Admin/Category/Index" class="btn btn-light float-right">Geri</a>
+                    <h4 class="text-white mt-2">Kategori Düzenle</h4>
+                    
+                </div>
+                <div class="card-body">
+                    <form action="/Admin/Category/Update" method="post">
+                        <input type="hidden" name="ID" value="@Model.ID" />
+                        <div class="form-group">
+                            <label >Kategori Adı</label>
+                            <input type="text" class="form-control" name="Name" value="@Model.Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea class="form-control" name="Description">@Model.Description</textarea>
+                        </div>
+                        <input type="submit" value="Güncelle" class="btn btn-success" />
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

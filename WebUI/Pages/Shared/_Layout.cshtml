@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @await Html.PartialAsync("~/Areas/Admin/Views/Shared/_head.cshtml")
+</head>
+<body class="skin-blue sidebar-mini">
+    @await Html.PartialAsync("~/Areas/Admin/Views/Shared/_header.cshtml")
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="image text-center"><img src="https://i.hizliresim.com/ne8pr9u.jpg" class="img-circle" alt="User Image"> </div>
+                    <div class="info">
+                        <p>Hoşgeldiniz, @User.Identity.Name</p>
+                        <a href="/Admin/Contact"><i class="fa fa-envelope"></i></a> <a href="/Admin/SiteSetting"><i class="fa fa-gear"></i></a> <a href="/Admin/Account/Logout"><i class="fa fa-power-off"></i></a>
+                    </div>
+                </div>
+
+                <!-- sidebar menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">Yönetim Menüsü</li>
+                    <li>
+                        <a href="/Admin/SiteSetting"> <i class="icon-settings"></i> <span>&nbsp;Site Ayarları</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/About"> <i class="icon-user"></i> <span>&nbsp;Hakkımda</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Category"> <i class="icon-list"></i> <span>&nbsp;Kategoriler</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Contact"> <i class="fa-solid fa-message"></i> <span>&nbsp;İletişim</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Portfolio"> <i class="fa-solid fa-briefcase"></i> <span>&nbsp;Portfolyo</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/UserSkill"> <i class="fa-solid fa-face-smile"></i></i> <span>&nbsp;Yetenekler</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                    </li>
+                <li>
+                    <a href="/Admin/User"> <i class="fa-solid fa-user"></i></i> <span>&nbsp;Kullanıcılar</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                </li>
+                </ul>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            
+                <!-- /.row -->
+                @RenderBody()
+                <!-- /.row -->
+                <!-- /.row -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    @await Html.PartialAsync("~/Areas/Admin/Views/Shared/_footer.cshtml")
+</body>
+</html>

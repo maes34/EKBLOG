@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Portfolio>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Template.cshtml";
+}
+
+
+@if (Model.Count() > 0)
+{
+<div class="container py-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <!-- Kart 1 -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="@item.ImageUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#" >@item.Title</a></h5>
+                    <p class="card-text">@item.Description</p>
+                            <a href="Portfolio/Details/@item.ID" class="btn btn-primary">İncele</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+}
+else
+    {
+        <div class="container py-5">
+        <div class="alert alert-danger">
+            Ürün Bulunamadı..!
+        </div>
+        </div>
+    }
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            @if (i == ViewBag.CurrentPage)
+            {
+                <li class="page-item active">
+                    <a class="page-link" href="#">@i</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i})">@i</a>
+                </li>
+            }
+        }
+
+
+    </ul>
+</nav>

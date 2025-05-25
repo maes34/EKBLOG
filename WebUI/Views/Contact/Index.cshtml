@@ -1,0 +1,71 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Template.cshtml";
+}
+
+<div class="contact-header">
+    <h1>Bizimle İletişime Geçin</h1>
+    <p>Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin!</p>
+</div>
+
+<div class="container">
+    <div class="row">      
+        <div class="col-md-6">
+            <div class="contact-form">
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+                <h3>İletişim Formu</h3>
+                <form method="post" action="/Contact/Add">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Adınız</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Soyadınız</label>
+                        <input type="text" class="form-control" id="surname" name="surname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-posta</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Konu</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mesajınız</label>
+                        <textarea class="form-control" id="messages" name="messages" rows="4" required></textarea>
+                    </div>
+                    <input type="hidden" value="0" name="read" id="read" />
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- İletişim Bilgileri ve Harita -->
+        <div class="col-md-6">
+            <div class="contact-info">
+                <h4>İletişim Bilgileri</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong>Telefon:</strong>@ViewBag.ContactPhone</li>
+                    <li><strong>E-posta:</strong> @ViewBag.Mail</li>
+                    <li><strong>Adres:</strong>@ViewBag.Adress</li>
+                </ul>
+
+            </div>
+
+            <!-- Harita -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d96364.41854656064!2d28.694192378483777!3d40.994878362256095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x14caa3e795401c23%3A0x8cc27d87b92093a9!2zWWVuaSBNYWhhbGxlLCBFbmdpbiBTb2thayBObzo1LCBLw7zDp8O8a8OnZWttZWNlL8Swc3RhbmJ1bA!3m2!1d40.9949077!2d28.776593599999998!4m0!5e0!3m2!1str!2str!4v1736102758195!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearFix">&nbsp;</div>
+

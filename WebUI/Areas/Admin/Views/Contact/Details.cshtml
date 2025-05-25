@@ -1,0 +1,50 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="content-header sty-one">
+    <h1>Gelen Kutusu</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> Yeni Kategori Ekle &nbsp;</li>
+    </ol>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-outline">
+                <div class="card-header bg-blue">
+                    <a href="/Admin/Contact/Index" class="btn btn-light float-right">Geri</a>
+                    <h4 class="text-white mt-2">Detay</h4>
+                </div>
+                <div class="card-body">
+                        <input type="hidden" name="ID" value="@Model.ID" />
+                        <div class="form-group">
+                            <label>Adı</label>
+                            <input type="text" disabled class="form-control" value="@Model.Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Soyadı</label>
+                            <input type="text" disabled class="form-control" value="@Model.Surname">
+                        </div>
+                    <div class="form-group">
+                        <label>E-Posta</label>
+                        <input type="text" disabled class="form-control" value="@Model.Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Konu</label>
+                        <input type="text" disabled class="form-control" value="@Model.Subject">
+                    </div>
+                        <div class="form-group">
+                            <label>Mesaj</label>
+                        <textarea disabled class="form-control" placeholder="@Model.Messages"></textarea>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

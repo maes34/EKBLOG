@@ -1,0 +1,71 @@
+﻿@using Core.Service
+@using Model.Entities
+
+@inject ICoreService<SiteSetting> _sdb
+
+
+@{
+    var siteSettings = _sdb.GetAll().FirstOrDefault();
+    string logoUrl = siteSettings?.SiteLogoUrl ?? "/images/default-logo.png";
+    string SiteTitle = siteSettings.SiteTitle;
+    string FavIcon = siteSettings.SiteFavionUrl;
+    string FooterText = siteSettings.FooterCopy;
+
+    string controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    string action = ViewContext.RouteData.Values["action"]?.ToString();
+    string pageTitle = "";
+
+    switch (controller)
+    {
+
+        case "Home":
+            pageTitle = "Anasayfa";
+            break;
+        case "Contact":
+            pageTitle = "İletişim";
+            break;
+        case "About":
+            pageTitle = "Hakkımızda";
+            break;
+        case "Portfolio":
+            pageTitle = "Portföy";
+            break;
+        case "Blog":
+            pageTitle = "Blog";
+            break;
+        default:
+            pageTitle = controller;
+            break;
+    }
+
+}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>@SiteTitle - @pageTitle</title>
+<link rel="stylesheet" href="~/dist/bootstrap/css/bootstrap.min.css">
+<link rel="icon" type="image/png" sizes="16x16" href="@FavIcon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+<!-- Theme style -->
+<link rel="stylesheet" href="~/dist/css/style.css">
+<link rel="stylesheet" href="~/dist/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/dist/css/et-line-font/et-line-font.css">
+<link rel="stylesheet" href="~/dist/css/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="~/dist/css/simple-lineicon/simple-line-icons.css">
+<link rel="stylesheet" href="~/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="~/dist/plugins/summernote/summernote-bs4.css">
+<link rel="stylesheet" href="~/dist/plugins/datatables/css/dataTables.bootstrap.min.css">
+
+<script>
+    function togglePassword(id, password) {
+        const span = document.getElementById('pw-' + id);
+        if (span.innerText === '••••••••') {
+            span.innerText = password;
+        } else {
+            span.innerText = '••••••••';
+        }
+    }
+</script>

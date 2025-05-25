@@ -1,0 +1,62 @@
+﻿@model IEnumerable<UserSkill>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="content-header sty-one">
+    <h1>Yetenekler</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> Yetenekler</li>
+    </ol>
+</div>
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <a href="/Admin/UserSkill/Add" class="btn btn-success float-right">Yeni Yetenek Ekle</a>
+            <div class="table-responsive">
+                <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap">
+                    <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
+                        <div class="col-sm-12">
+                            <table id="example2" class="table table-bordered table-hover dataTable" data-name="cool-table" role="grid" aria-describedby="example2_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">Yetenek Adı</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Yetenek Puanı</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">@item.ID</td>
+                                            <td><a class="font-weight-bold" href="/Admin/UserSkill/Update/@item.ID">@item.skill_name</a></td>
+                                            <td>@item.skill_point</td>
+                                            <td>
+                                                <a href="/Admin/UserSkill/Delete/@item.ID"><i class="fa-solid fa-trash"></i></a> &nbsp;
+                                                <a href="/Admin/UserSkill/Update/@item.ID"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                                            </td>
+                                        </tr>
+                                    }                                    
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">ID</th>
+                                        <th rowspan="1" colspan="1">Yetenek Adı</th>
+                                        <th rowspan="1" colspan="1">Yetenek Puanı</th>
+                                        <th rowspan="1" colspan="1">İşlemler</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

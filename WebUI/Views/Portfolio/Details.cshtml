@@ -1,0 +1,43 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Template.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Görsel -->
+        <div class="col-lg-6 mb-4">
+            <img src="@Model.ImageUrl" class="img-fluid rounded shadow" alt="Proje Görseli">
+        </div>
+
+        <!-- İçerik -->
+        <div class="col-lg-6">
+            <h2 class="mb-3">@Model.Title</h2>
+
+            @* <p class="text-muted mb-4">
+              
+            </p> *@
+
+            <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item"><strong>Kategori:</strong> @Model.Category.Name</li>
+                <li class="list-group-item"><strong>Web Sitesi:</strong> @Model.ProjectUrl</li>
+            </ul>
+           @*  <a href="https://example.com/proje" target="_blank" class="btn btn-outline-primary">
+                Projeyi Görüntüle
+            </a> *@
+        </div>
+    </div>
+
+    <!-- Ek Açıklama veya Galeri -->
+    <div class="row mt-5">
+        <div class="col">
+            <h4>Açıklamalar</h4>
+            <p>
+                @Model.Description
+            </p>
+        </div>
+    </div>
+</div>
+
+

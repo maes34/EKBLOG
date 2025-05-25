@@ -1,0 +1,119 @@
+﻿@model SiteSetting
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="content-header sty-one">
+    <h1>Site Ayarları</h1> 
+    <ol class="breadcrumb">
+        <li><a href="/Admin/Index/">Anasayfa</a></li>
+        <li><i class="fa fa-angle-right"></i> Site Ayarları&nbsp;</li> |&nbsp;
+        <li>Son Güncelleme : @Model.CreatedAt </li>
+    </ol>
+</div>
+
+<div class="content">
+<div class="card card-outline">
+    <div class="card-body">
+        <form method="post" action="/Admin/SiteSetting/Update">
+            <input type="hidden" name="CreatedAt" value="@DateTime.Now" />
+            <input type="hidden" value="5" name="ID" />
+            <div class="form-group">
+                <label>Site Adı</label>
+                    <input type="text" class="form-control" placeholder="@Model.SiteTitle" name="SiteTitle" value="@Model.SiteTitle">
+            </div>
+            <div class="form-group">
+                   <br /><img class="img-fluid w-25" src="@Model.SiteLogoUrl" />  <br />
+                <label>Logo</label>
+                    
+                    <input type="text" class="form-control" placeholder="@Model.SiteLogoUrl" name="SiteLogoUrl" value="@Model.SiteLogoUrl">
+            </div>           
+            <div class="form-group">
+                    <br /><img class="img-fluid h-25 w-25" src="@Model.SiteFavionUrl" />  <br />
+                <label>Favicon</label>
+                    <input type="text" class="form-control" placeholder="@Model.SiteFavionUrl" name="SiteFavionUrl" value="@Model.SiteFavionUrl">
+            </div>
+                
+                <div class="form-group">
+                    <br /><img class="img-fluid h-25 w-25" src="@Model.SiteBg" />  <br />
+                    <label>Slayt Arkaplanı</label>
+                    <input type="text" class="form-control" placeholder="@Model.SiteBg" name="SiteBg" value="@Model.SiteBg">
+                </div>
+                <div class="form-group">
+                    <label>CV Linki</label>
+                    <input type="text" class="form-control" placeholder="@Model.CvUrl" name="CvUrl" value="@Model.CvUrl">
+                </div>
+                <div class="form-group">
+                    <label>Adres</label>
+                    <textarea type="text" class="form-control" placeholder="@Model.Adress" name="Adress">@Model.Adress</textarea>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label">E-mail</label>
+                    <input class="form-control" placeholder="@Model.ContactMail" name="ContactMail" value="@Model.ContactMail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label">Contact Number</label>
+                    <input class="form-control" placeholder="@Model.PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" type="text">
+                    <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
+                </div>                 
+                <h3 class="p-1">Sosyal Medya Ayarları</h3>                
+                <!-- Sosyal Medya -->
+                <div class="form-group">
+                    <label>Instagram Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.InstagramUrl" name="InstagramUrl" value="@Model.InstagramUrl">
+                </div>
+                <div class="form-group">
+                    <label>LinkedIn Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.LinkedinUrl" name="LinkedinUrl" value="@Model.LinkedinUrl">
+                </div>
+                <div class="form-group">
+                    <label>Facebook Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.FacebookUrl" name="FacebookUrl" value="@Model.FacebookUrl">
+                </div>
+                <div class="form-group">
+                    <label>Youtube Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.YoutubeUrl" name="YoutubeUrl" value="@Model.YoutubeUrl">
+                </div>
+                <div class="form-group">
+                    <label>X Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.XUrl" name="x_url" value="@Model.XUrl">
+                </div>
+                <div class="form-group">
+                    <label>Github Kullanıcı Adı</label>
+                    <div id="emailHelp" class="form-text">"kullaniciadi" yazınız</div>
+                    <input type="text" class="form-control" placeholder="@Model.GithubUrl" name="GithubUrl" value="@Model.GithubUrl">
+                </div>
+                <hr class="border border-danger border-2 opacity-50">
+                <h3 style="font-weight:bold">Site Yönetim Ayarları</h3>                  
+                <div class="form-group">
+                    <label>Bakım Modu | <b>
+                            @if (@Model.MaintenanceMode == 1)
+                            {
+                                <span style="color:forestgreen; font-weight:bold">Aktif</span>
+                            }else
+                            {
+                                <span style="color:darkred; font-weight:bold">Pasif</span>
+                            }
+                        </b></label>
+                    <div class="form-text">Siteyi bakıma almak için "Aktif" seçin.</div>
+                    <select class="form-control" name="MaintenanceMode">
+                        <option value="0" @(Model.MaintenanceMode == 0 ? "selected" : "")>Pasif</option>
+                        <option value="1" @(Model.MaintenanceMode == 1 ? "selected" : "")>Aktif</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Footer metni</label>
+                    <div id="emailHelp" class="form-text">Footerde görüntülenecek içerik</div>
+                    <textarea type="text" class="form-control" placeholder="@Model.FooterCopy" name="FooterCopy" value="@Model.FooterCopy"></textarea>
+                </div>
+            <button type="submit" class="btn btn-success">Güncelle</button>
+        </form>
+    </div>
+</div>
